@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Piedra, Papel o Tijera - Plantilla 3</h1>
+
+<script>
+const opciones=["piedra","papel","tijera"];
+function jugar(){
+  while(true){
+    const usuario=prompt("Elige piedra, papel o tijera (o 'salir' para terminar)").toLowerCase();
+    if(usuario==="salir") break;
+    if(!opciones.includes(usuario)){ console.log("Opción inválida"); continue; }
+    const computadora=opciones[Math.floor(Math.random()*3)];
+    let resultado;
+    if(usuario===computadora) resultado="Empate";
+    else if(
+      (usuario==="piedra" && computadora==="tijera")||
+      (usuario==="tijera" && computadora==="papel")||
+      (usuario==="papel" && computadora==="piedra")
+    ) resultado="Ganaste";
+    else resultado="Computadora gana";
+    console.log(`Tú: ${usuario} | Computadora: ${computadora} -> ${resultado}`);
+  }
+}
+jugar();
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Piedra, Papel o Tijera - Plantilla 2</h1>
+
+<script>
+const opciones=["piedra","papel","tijera"];
+function jugar(){
+  const j1=prompt("Jugador 1: elige piedra, papel o tijera").toLowerCase();
+  if(!opciones.includes(j1)){ alert("Opción inválida"); return; }
+  const j2=prompt("Jugador 2: elige piedra, papel o tijera").toLowerCase();
+  if(!opciones.includes(j2)){ alert("Opción inválida"); return; }
+  let resultado;
+  if(j1===j2) resultado="¡Empate!";
+  else if(
+    (j1==="piedra" && j2==="tijera")||
+    (j1==="tijera" && j2==="papel")||
+    (j1==="papel" && j2==="piedra")
+  ) resultado="¡Gana Jugador 1!";
+  else resultado="¡Gana Jugador 2!";
+  alert(`Jugador 1: ${j1}\nJugador 2: ${j2}\n${resultado}`);
+}
+jugar();
+</script>
+</body>
+</html>
